@@ -17,7 +17,7 @@ p {
 .main-content {
   margin-left: 16px;
   margin-right: 16px;
-  margin-top: 70px; }
+  margin-top: 20px; }
 
 /* BreadCrumb */
 .breadcrumb {
@@ -37,18 +37,18 @@ p {
 
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #333;
   overflow: hidden; }
 
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #333;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px; }
+  font-size: 17px;
+  text-transform: uppercase; }
 
 /* Add an active class to highlight the current page */
 .active {
@@ -69,11 +69,12 @@ p {
   font-size: 17px;
   border: none;
   outline: none;
-  color: white;
+  color: #333;
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
-  margin: 0; }
+  margin: 0;
+  text-transform: uppercase; }
 
 /* Style the dropdown content (hidden by default) */
 .dropdown-content {
@@ -83,6 +84,8 @@ p {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1; }
+  .dropdown-content ul {
+    list-style: none; }
 
 /* Style the links inside the dropdown */
 .dropdown-content a {
@@ -107,6 +110,13 @@ p {
 /* Show the dropdown menu when the user moves the mouse over the dropdown button */
 .dropdown:hover .dropdown-content {
   display: block; }
+
+.hover-drop:hover .list-container-lev2 {
+  display: block;
+  float: right; }
+
+.list-container-lev2 {
+  display: none; }
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
