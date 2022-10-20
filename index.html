@@ -5,45 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Parc zoologique de Grenoble" />
+
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/menu.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <script type="text/javascript" src="scripts/menu.js"></script>
+
     <title>Parc zoologique de Grenoble</title>
   </head>
 
   <body>
     <nav class="header">
-      <h1>Parc zoologique de Grenoble</h1>
+      <div class="topnav" id="myTopnav">
+        <a href="/index.html" class="active">Accueil</a>
+        <a href="/perso.html">Espace perso</a>
+        <a href="/animaux.html">Animaux</a>
+        <a href="/virtuel_audio.html">Visite virtuelle audio</a>
+        <a href="/virtuel_video.html">Visite virtuelle video</a>
+        <a href="/contact.html">Contact</a>
+        <a href="javascript:void(0);" class="icon" onclick="toggleNavBar()">
+          <i class="fa fa-bars"></i>
+        </a>
 
-      <ul class="navbar">
-        <li class="navitem">
-          <a href="/index.html">Accueil</a>
-        </li>
-
-        <li class="navitem">
-          <a href="/perso.html">Espace perso</a>
-        </li>
-
-        <li class="navitem">
-          <a href="/animaux.html">Animaux</a>
-        </li>
-
-        <li class="navitem">
-          <a href="/virtuel_audio.html">Visite virtuelle audio</a>
-        </li>
-
-        <li class="navitem">
-          <a href="/virtuel_video.html">Visite virtuelle vidéo</a>
-        </li>
-
-        <li class="navitem">
-          <a href="/contact.html">Contact</a>
-        </li>
-      </ul>
+        <a href="" class="user-icon">
+          <i class="fa fa-user">
+            <ul class="list-container">
+              <li class="list-element">Connexion</li>
+              <li class="list-element">Mes informations</li>
+              <ul class="list-container">
+                <li class="list-element">Nom & prénom</li>
+                <li class="list-element">Numéro de téléphone</li>
+                <li class="list-element">Email</li>
+              </ul>
+              <li class="list-element">Messagerie</li>
+              <li class="list-element">Historique</li>
+            </ul>
+          </i>
+        </a>
+      </div>
     </nav>
 
-    <hr class="separator" />
-
     <div class="main-content">
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <ul>
+          <li><span aria-current="page">Parc zoologique de Grenoble</span></li>
+        </ul>
+      </nav>
+
+      <hr class="separator" />
       <section class="description-generale">
-        <h2 class="titre-section">Description générale</h2>
+        <h2 class="title">Description générale</h2>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. In molestiae
           culpa placeat, sunt quod minus hic? Quidem eaque explicabo obcaecati
@@ -58,8 +73,10 @@
         </p>
       </section>
 
+      <hr class="separator" />
+
       <section class="infos-pratiques">
-        <h2 class="titre-section">Infos pratiques</h2>
+        <h2 class="title">Infos pratiques</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis
           nesciunt pariatur dignissimos impedit a eveniet dolores exercitationem

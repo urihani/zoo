@@ -5,44 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Parc zoologique de Grenoble" />
+
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/menu.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <script type="text/javascript" src="scripts/menu.js"></script>
+
     <title>Espace perso</title>
   </head>
 
   <body>
     <nav class="header">
-      <h1>Parc zoologique de Grenoble</h1>
-
-      <ul class="navbar">
-        <li class="navitem">
-          <a href="/index.html">Accueil</a>
-        </li>
-
-        <li class="navitem">
-          <a href="/perso.html">Espace perso</a>
-        </li>
-
-        <li class="navitem">
-          <a href="/animaux.html">Animaux</a>
-        </li>
-
-        <li class="navitem">
-          <a href="/virtuel_audio.html">Visite virtuelle audio</a>
-        </li>
-
-        <li class="navitem">
-          <a href="/virtuel_video.html">Visite virtuelle vidéo</a>
-        </li>
-
-        <li class="navitem">
-          <a href="/contact.html">Contact</a>
-        </li>
-      </ul>
+      <div class="topnav" id="myTopnav">
+        <a href="/index.html">Accueil</a>
+        <a href="/perso.html" class="active">Espace perso</a>
+        <a href="/animaux.html">Animaux</a>
+        <a href="/virtuel_audio.html">Visite virtuelle audio</a>
+        <a href="/virtuel_video.html">Visite virtuelle video</a>
+        <a href="/contact.html">Contact</a>
+        <a href="javascript:void(0);" class="icon" onclick="toggleNavBar()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
     </nav>
 
-    <hr class="separator" />
-
     <div class="main-content">
-      <h2>Espace perso</h2>
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <ul>
+          <li><a href="#">Parc zoologique de Grenoble</a></li>
+          <li><span aria-current="page">Espace perso</span></li>
+        </ul>
+      </nav>
+      <hr class="separator" />
 
       <ul class="list-container-lev1">
         <li class="list-element">Connexion</li>
