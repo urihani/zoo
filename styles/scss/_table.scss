@@ -5,6 +5,7 @@ table {
   padding: 0;
   width: 100%;
   table-layout: fixed;
+  margin-top: 24px;
 }
 
 table caption {
@@ -77,4 +78,26 @@ table th {
   table td:last-child {
     border-bottom: 0;
   }
+
+  .img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .start {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .desc {
+    text-align: left;
+  }
+}
+
+.cell-title {
+  font-weight: 800;
 }
