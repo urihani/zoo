@@ -12,14 +12,45 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-    <script type="text/javascript" src="scripts/menu.js"></script>
-
     <title>Parc zoologique de Grenoble</title>
   </head>
 
   <body>
     <!-- NavBar  -->
-    <script id="replace_with_navbar" src="scripts/navbar.js"></script>
+    <div class="topnav" id="myTopnav">
+      <!-- <i class="fa-solid fa-house"><a href="/index.html" class="active"
+        ></i>PZG</a
+      >
+      <a href="/animaux.html">Animaux</a>
+      <a href="/virtuel_audio.html">Visite virtuelle audio</a>
+      <a href="/virtuel_video.html">Visite virtuelle video</a>
+      <a href="/contact.html">Contact</a> -->
+      <!-- <div class="dropdown">
+        <a class="dropbtn">
+          Espace perso.
+          <i class="fa fa-caret-down"></i>
+        </a>
+        <div class="dropdown-content">
+          <ul class="list-container-lev1">
+            <li class="list-element"><a href="#">Connexion</a></li>
+            <li class="list-element hover-drop">
+              <a href="#">Mes informations <i class="fa fa-caret-down"></i></a>
+              <ul class="list-container-lev2">
+                <li class="list-element"><a href="#">Nom & prénom</a></li>
+                <li class="list-element">
+                  <a href="#">Numéro de téléphone</a>
+                </li>
+                <li class="list-element"><a href="#">Email</a></li>
+              </ul>
+            </li>
+            <li class="list-element"><a href="#">Messagerie</a></li>
+            <li class="list-element"><a href="#">Historique</a></li>
+          </ul>
+        </div> -->
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()"
+          >&#9776;</a>
+      </div>
+    </div>
 
     <div class="main-content">
       <nav aria-label="Breadcrumb" class="breadcrumb">
@@ -63,5 +94,6 @@
         </p>
       </section>
     </div>
+    <script type="text/javascript" src="scripts/menu.js"></script>
   </body>
 </html>
