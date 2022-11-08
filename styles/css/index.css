@@ -56,7 +56,11 @@ p {
   color: white;
   background-color: #04aa6d;
   box-shadow: 0 0 4px #999;
-  outline: none; }
+  outline: none;
+  margin: 8px; }
+
+.danger {
+  background-color: #ca0b00; }
 
 /* Ripple effect */
 .ripple {
@@ -70,6 +74,11 @@ p {
   background-color: #31de9e;
   background-size: 100%;
   transition: background 0s; }
+
+.btn_row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
 
 figcaption {
   color: #333;

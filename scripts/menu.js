@@ -1,78 +1,60 @@
 let menuContent = {
-  accueil: {
-    text: "PZG",
-    url: "",
-    iconClass: "fa-solid fa-house",
-    children: {},
-  },
   animaux: {
     text: "Animaux",
-    url: "",
-    iconClass: "",
+    url: "/animaux.html",
     children: {},
   },
   audio: {
     text: "Visite virtuelle audio",
-    url: "",
-    iconClass: "",
+    url: "/virtuel_audio.html",
     children: {},
   },
   video: {
     text: "Visite virtuelle video",
-    url: "",
-    iconClass: "",
+    url: "/virtuel_video.html",
     children: {},
   },
   contact: {
     text: "Contact",
-    url: "",
-    iconClass: "",
+    url: "/contact.html",
     children: {},
   },
   espacePerso: {
     text: "Espace perso.",
     url: "#",
-    iconClass: "fa fa-caret-down",
     children: {
       connexion: {
         text: "Connexion",
         url: "",
-        iconClass: "",
         children: {},
       },
       messagerie: {
         text: "Messagerie",
         url: "",
-        iconClass: "",
         children: {},
       },
       historique: {
         text: "Historique",
         url: "",
-        iconClass: "",
         children: {},
       },
       informations: {
         text: "Mes informations",
         url: "#",
-        iconClass: "",
         children: {
           nom: {
             text: "Nom & prénom",
             url: "",
-            iconClass: "",
             children: {},
           },
           telephone: {
             text: "Numéro de téléphone",
             url: "",
-            iconClass: "",
             children: {},
           },
           email: {
             text: "Email",
             url: "",
-            iconClass: "",
             children: {},
           },
         },
@@ -149,9 +131,9 @@ function init() {
           subItem.appendChild(listContainerLev2);
 
           Object.entries(value.children).forEach(([key, value]) => {
-            console.log("------------------------------------");
-            console.log("Key : ", JSON.stringify(key, null, 4));
-            console.log("Value : ", JSON.stringify(value, null, 4));
+            // console.log("------------------------------------");
+            // console.log("Key : ", JSON.stringify(key, null, 4));
+            // console.log("Value : ", JSON.stringify(value, null, 4));
 
             let subItem = document.createElement("li");
             subItem.classList.add("list-element");
@@ -167,6 +149,17 @@ function init() {
       });
     }
   });
+
+  // activation du lien cliqué
+  for (var i = 0; i < menuContent.length; i++) {
+    menuContent[i].addEventListener("click", function () {
+      var current = document.querySelector(".active");
+      if (current) {
+        current.classList.remove("active");
+      }
+      this.classList.add("active");
+    });
+  }
 }
 
 /**

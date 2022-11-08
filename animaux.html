@@ -12,14 +12,19 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-    <script type="text/javascript" src="scripts/menu.js"></script>
-
     <title>Animaux</title>
   </head>
 
   <body>
     <!-- NavBar  -->
-    <script id="replace_with_navbar" src="scripts/navbar.js"></script>
+    <div class="topnav" id="myTopnav">
+      <i class="fa-solid fa-house"><a href="/index.html" class="active"
+       >PZG</a></i>
+    
+       <a href="javascript:void(0);" class="icon" onclick="toggleMenu()"
+         >&#9776;</a>
+     </div>
+   </div>
 
     <div class="main-content">
       <nav aria-label="Breadcrumb" class="breadcrumb">
@@ -31,7 +36,7 @@
 
       <hr class="separator" />
 
-      <table>
+      <table class="animals_table">
         <thead>
           <tr>
             <th class="cell-title" scope="col">Nom</th>
@@ -40,137 +45,10 @@
             <th class="cell-title" scope="col"></th>
           </tr>
         </thead>
-
-        <!-- ELEPHANT  -->
-        <tr>
-          <!-- nom -->
-          <td scope="row" data-label="Nom">
-            <figure class="img">
-              <img src="img/elephant.jpeg" width="130px" alt="Elephant" />
-              <figcaption>Un éléphant</figcaption>
-            </figure>
-          </td>
-
-          <!-- description -->
-          <td class="start" data-label="Description">
-            <span class="desc"
-              >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptas, veritatis?</span
-            >
-          </td>
-
-          <!-- pays natal -->
-          <td data-label="Pays">France</td>
-
-          <td class="center" data-label="">
-            <button class="primary-button ripple">Agrandir</button>
-          </td>
-        </tr>
-
-        <!-- LION  -->
-        <tr>
-          <!-- nom -->
-          <td scope="row" data-label="Nom">
-            <figure class="img">
-              <img src="img/lion.jpeg" width="130px" alt="Lion" />
-              <figcaption>Un lion</figcaption>
-            </figure>
-          </td>
-
-          <!-- description -->
-          <td class="start" data-label="Description">
-            <span class="desc"
-              >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptas, veritatis?</span
-            >
-          </td>
-
-          <!-- pays natal -->
-          <td data-label="Pays">France</td>
-
-          <td class="center" data-label="">
-            <button class="primary-button">Agrandir</button>
-          </td>
-        </tr>
-
-        <!-- TIGRE -->
-        <tr>
-          <!-- nom -->
-          <td scope="row" data-label="Nom">
-            <figure class="img">
-              <img src="img/tiger.jpeg" width="130px" alt="Tigre" />
-              <figcaption>Un tigre</figcaption>
-            </figure>
-          </td>
-
-          <!-- description -->
-          <td class="start" data-label="Description">
-            <span class="desc"
-              >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptas, veritatis?</span
-            >
-          </td>
-
-          <!-- pays natal -->
-          <td data-label="Pays">France</td>
-
-          <td class="center" data-label="">
-            <button class="primary-button">Agrandir</button>
-          </td>
-        </tr>
-
-        <!-- Rhynoceros -->
-        <tr>
-          <!-- nom -->
-          <td scope="row" data-label="Nom">
-            <figure class="img">
-              <img src="img/rhynoceros.jpeg" width="130px" alt="Rhynocéros" />
-              <figcaption>Rhynocéros</figcaption>
-            </figure>
-          </td>
-
-          <!-- description -->
-          <td class="start" data-label="Description">
-            <span class="desc"
-              >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptas, veritatis?</span
-            >
-          </td>
-
-          <!-- pays natal -->
-          <td data-label="Pays">France</td>
-
-          <td class="center" data-label="">
-            <button class="primary-button">Agrandir</button>
-          </td>
-        </tr>
-
-        <!-- ZEBRE -->
-        <tr>
-          <!-- nom -->
-          <td scope="row" data-label="Nom">
-            <figure class="img">
-              <img src="img/zebre.jpeg" width="130px" alt="Zebre" />
-              <figcaption>Un zèbre</figcaption>
-            </figure>
-          </td>
-
-          <!-- description -->
-          <td class="start" data-label="Description">
-            <span class="desc"
-              >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptas, veritatis?</span
-            >
-          </td>
-
-          <!-- pays natal -->
-          <td data-label="Pays">France</td>
-
-          <td class="center" data-label="">
-            <button class="primary-button">Agrandir</button>
-          </td>
-        </tr>
       </table>
     </div>
+
+    <script type="text/javascript" src="scripts/menu.js"></script>
+    <script type="text/javascript" src="scripts/animaux.js"></script>
   </body>
 </html>

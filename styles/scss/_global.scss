@@ -73,6 +73,11 @@ p {
   background-color: $secondary;
   box-shadow: 0 0 4px #999;
   outline: none;
+  margin: 8px;
+}
+
+.danger {
+  background-color: #ca0b00;
 }
 
 /* Ripple effect */
@@ -88,6 +93,12 @@ p {
   background-color: $secondary-dim;
   background-size: 100%;
   transition: background 0s;
+}
+
+.btn_row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 // Images
