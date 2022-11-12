@@ -36,27 +36,21 @@ let animals = [
   },
 ];
 
-init();
-
-function init() {
+function initTable() {
   let table = document.querySelector(".animals_table");
 
   animals.forEach((animal) => {
     let tr = document.createElement("tr");
 
-    // Nom + Image
     let tdNom = createNameColumn(animal);
     tr.appendChild(tdNom);
 
-    // Description
     let tdDesc = createDescription(animal);
     tr.appendChild(tdDesc);
 
-    // Pays natal
     let tdPays = createCountry(animal);
     tr.appendChild(tdPays);
 
-    // Boutons
     let tdBtns = createButtons();
     tr.appendChild(tdBtns);
 
@@ -134,3 +128,9 @@ function createButtons() {
   tdBtns.appendChild(supprimerBtn);
   return tdBtns;
 }
+
+function openModal() {
+  document.getElementById("modal").style.display = "block";
+}
+
+function addAnimal() {}

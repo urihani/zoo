@@ -1,7 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com");
-@import url("https://fonts.gstatic.com");
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@0,600;0,800;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,800,800i,900i&display=swap");
 body {
   padding: 0;
   margin: 0;
@@ -89,6 +87,25 @@ figcaption {
   justify-content: center;
   margin-top: 8px; }
 
+.modal {
+  display: none; }
+
+.modal-back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.25); }
+
+.modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 25px;
+  background: white;
+  transform: translate(-50%, -50%); }
+
 @media screen and (min-width: 600px) {
   .main-content {
     width: 70%;
@@ -112,11 +129,12 @@ figcaption {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  cursor: pointer; }
 
 /* Add an active class to highlight the current page */
 .active {
-  background-color: #04aa6d;
+  background-color: #04aa6d !important;
   color: white; }
 
 /* Hide the link that should open and close the topnav on small screens */
@@ -233,6 +251,16 @@ table tr {
   background-color: #f8f8f8;
   border: 1px solid #ddd;
   padding: 0.35em; }
+
+table tr:hover {
+  background-color: #333;
+  color: white; }
+
+table tr:nth-of-type(odd) {
+  background-color: #eeeeee; }
+
+table tr:hover:nth-of-type(odd) {
+  background-color: #333; }
 
 table th,
 table td {

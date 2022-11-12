@@ -1,22 +1,22 @@
 let menuContent = {
   animaux: {
     text: "Animaux",
-    url: "/animaux.html",
+    url: "animalsPage()",
     children: {},
   },
   audio: {
     text: "Visite virtuelle audio",
-    url: "/virtuel_audio.html",
+    url: "virtuelAudioPage()",
     children: {},
   },
   video: {
     text: "Visite virtuelle video",
-    url: "/virtuel_video.html",
+    url: "virtuelVideoPage()",
     children: {},
   },
   contact: {
     text: "Contact",
-    url: "/contact.html",
+    url: "contactPage()",
     children: {},
   },
   espacePerso: {
@@ -63,103 +63,86 @@ let menuContent = {
   },
 };
 
-window.addEventListener("load", init, false);
+let topNav = document.getElementById("myTopnav");
 
-/**
- * Génération du menu - Maximum 2 niveaux d'imbrication
- */
-function init() {
-  let topNav = document.getElementById("myTopnav");
+Object.entries(menuContent).forEach(([key, value]) => {
+  let dropdown = document.createElement("div");
+  dropdown.classList.add("dropdown");
 
-  Object.entries(menuContent).forEach(([key, value]) => {
-    // console.log("------------------------------------");
-    // console.log("Key : ", JSON.stringify(key, null, 4));
-    // console.log("Value : ", JSON.stringify(value, null, 4));
+  let button = document.createElement("a");
+  button.setAttribute("onclick", value.url);
+  let buttonText = document.createTextNode(value.text);
+  let icon = document.createElement("i");
+  icon.classList.add("fa");
+  icon.classList.add("fa-caret-down");
+  button.classList.add("dropbtn");
+  button.appendChild(buttonText);
+  dropdown.appendChild(button);
+  topNav.appendChild(dropdown);
 
-    let dropdown = document.createElement("div");
-    dropdown.classList.add("dropdown");
-
-    let button = document.createElement("a");
-    button.href = value.url;
-    let buttonText = document.createTextNode(value.text);
-    let icon = document.createElement("i");
-    icon.classList.add("fa");
-    icon.classList.add("fa-caret-down");
-    button.classList.add("dropbtn");
-    button.appendChild(buttonText);
+  if (Object.keys(value.children).length) {
+    button.appendChild(icon);
     dropdown.appendChild(button);
     topNav.appendChild(dropdown);
 
-    if (Object.keys(value.children).length) {
-      button.appendChild(icon);
-      dropdown.appendChild(button);
-      topNav.appendChild(dropdown);
+    let dropDownContent = document.createElement("div");
+    dropDownContent.classList.add("dropdown-content");
+    dropdown.appendChild(dropDownContent);
 
-      let dropDownContent = document.createElement("div");
-      dropDownContent.classList.add("dropdown-content");
-      dropdown.appendChild(dropDownContent);
+    let listContainerLev1 = document.createElement("ul");
+    listContainerLev1.classList.add("list-container-lev1");
+    dropDownContent.appendChild(listContainerLev1);
 
-      let listContainerLev1 = document.createElement("ul");
-      listContainerLev1.classList.add("list-container-lev1");
-      dropDownContent.appendChild(listContainerLev1);
+    Object.entries(value.children).forEach(([key, value]) => {
+      let subItem = document.createElement("li");
+      subItem.classList.add("list-element");
+      let link = document.createElement("a");
+      link.setAttribute("onclick", value.url);
+      let linkText = document.createTextNode(value.text);
+      link.appendChild(linkText);
+      subItem.appendChild(link);
 
-      Object.entries(value.children).forEach(([key, value]) => {
-        // console.log("------------------------------------");
-        // console.log("Key : ", JSON.stringify(key, null, 4));
-        // console.log("Value : ", JSON.stringify(value, null, 4));
+      listContainerLev1.appendChild(subItem);
 
-        let subItem = document.createElement("li");
-        subItem.classList.add("list-element");
-        let link = document.createElement("a");
-        link.href = value.url;
-        let linkText = document.createTextNode(value.text);
-        link.appendChild(linkText);
-        subItem.appendChild(link);
+      // on vérifie si le lien a des enfants
+      if (Object.keys(value.children).length) {
+        let icon = document.createElement("i");
+        icon.classList.add("fa");
+        icon.classList.add("fa-caret-down");
+        link.appendChild(icon);
 
-        listContainerLev1.appendChild(subItem);
+        let listContainerLev2 = document.createElement("ul");
+        listContainerLev2.classList.add("list-container-lev2");
+        subItem.classList.add("hover-drop");
+        subItem.appendChild(listContainerLev2);
 
-        // on vérifie si le lien a des enfants
-        if (Object.keys(value.children).length) {
-          let icon = document.createElement("i");
-          icon.classList.add("fa");
-          icon.classList.add("fa-caret-down");
-          link.appendChild(icon);
+        Object.entries(value.children).forEach(([key, value]) => {
+          let subItem = document.createElement("li");
+          subItem.classList.add("list-element");
+          let link = document.createElement("a");
+          link.setAttribute("onclick", value.url);
+          let linkText = document.createTextNode(value.text);
+          link.appendChild(linkText);
+          subItem.appendChild(link);
 
-          let listContainerLev2 = document.createElement("ul");
-          listContainerLev2.classList.add("list-container-lev2");
-          subItem.classList.add("hover-drop");
-          subItem.appendChild(listContainerLev2);
-
-          Object.entries(value.children).forEach(([key, value]) => {
-            // console.log("------------------------------------");
-            // console.log("Key : ", JSON.stringify(key, null, 4));
-            // console.log("Value : ", JSON.stringify(value, null, 4));
-
-            let subItem = document.createElement("li");
-            subItem.classList.add("list-element");
-            let link = document.createElement("a");
-            link.href = value.url;
-            let linkText = document.createTextNode(value.text);
-            link.appendChild(linkText);
-            subItem.appendChild(link);
-
-            listContainerLev2.appendChild(subItem);
-          });
-        }
-      });
-    }
-  });
-
-  // activation du lien cliqué
-  for (var i = 0; i < menuContent.length; i++) {
-    menuContent[i].addEventListener("click", function () {
-      var current = document.querySelector(".active");
-      if (current) {
-        current.classList.remove("active");
+          listContainerLev2.appendChild(subItem);
+        });
       }
-      this.classList.add("active");
     });
   }
+});
+
+// activation du lien cliqué
+let links = document.querySelectorAll(".dropbtn");
+
+for (var i = 0; i < links.length; i++) {
+  links[i].addEventListener("click", function () {
+    var current = document.querySelector(".active");
+    if (current) {
+      current.classList.remove("active");
+    }
+    this.classList.add("active");
+  });
 }
 
 /**

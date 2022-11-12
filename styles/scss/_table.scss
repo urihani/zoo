@@ -19,6 +19,19 @@ table tr {
   padding: 0.35em;
 }
 
+table tr:hover {
+  background-color: $primary;
+  color: white;
+}
+
+table tr:nth-of-type(odd) {
+  background-color: rgb(238, 238, 238);
+}
+
+table tr:hover:nth-of-type(odd) {
+  background-color: $primary;
+}
+
 table th,
 table td {
   padding: 0.625em;
