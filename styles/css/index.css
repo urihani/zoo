@@ -135,7 +135,7 @@ figcaption {
 /* Add an active class to highlight the current page */
 .active {
   background-color: #04aa6d !important;
-  color: white; }
+  color: white !important; }
 
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
@@ -252,14 +252,18 @@ table tr {
   border: 1px solid #ddd;
   padding: 0.35em; }
 
-table tr:hover {
+table tbody tr:hover figcaption {
   background-color: #333;
   color: white; }
 
-table tr:nth-of-type(odd) {
+table tbody tr:hover {
+  background-color: #333;
+  color: white; }
+
+table tr:nth-of-type(odd):not(:first-child) {
   background-color: #eeeeee; }
 
-table tr:hover:nth-of-type(odd) {
+table tr:hover:nth-of-type(odd):not(:first-child) {
   background-color: #333; }
 
 table th,
@@ -272,7 +276,7 @@ table th {
   letter-spacing: 0.1em;
   text-transform: uppercase; }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   table {
     border: 0; }
 
@@ -323,10 +327,11 @@ table th {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    align-items: start; }
+    align-items: start;
+    text-align: justify; }
 
   .desc {
-    text-align: left; } }
+    text-align: justify; } }
 .cell-title {
   font-weight: 800; }
 
@@ -366,6 +371,29 @@ audio::-webkit-media-controls-panel {
   resize: vertical;
   margin-top: 4px;
   margin-bottom: 16px; }
+
+.row-animals {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  .row-animals label {
+    font-weight: 600;
+    flex: 1; }
+  .row-animals input,
+  .row-animals textarea {
+    flex: 2;
+    width: 400px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    margin-top: 4px;
+    margin-bottom: 16px; }
+
+.img-div {
+  width: 150px;
+  height: 150px; }
 
 .form {
   display: flex;
